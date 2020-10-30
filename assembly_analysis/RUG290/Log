@@ -1,0 +1,70 @@
+Fri Oct 30 12:08:26 2020
+ velveth RUG290/ 25 -long -fasta ../genomes/RUG290.fa
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+
+Fri Oct 30 12:22:50 2020
+ velveth /home/oisin/programs/cs318/318assignment/assembly_analysis/RUG290 25 -long -fasta /home/oisin/programs/cs318/318assignment/genomes/RUG290.fa
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+
+Fri Oct 30 12:26:40 2020
+ velveth RUG290/ 25 -long -fasta ../genomes/RUG290.fa
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+OPENMP
+LONGSEQUENCES
+
+Fri Oct 30 12:28:54 2020
+ velvetg RUG290/
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+OPENMP
+LONGSEQUENCES
+
+Final graph has 929 nodes and n50 of 12392, max 56634, total 1623244, using 143/160 reads
+Fri Oct 30 12:48:15 2020
+ velveth RUG290/ 29 -long -fasta ../genomes/RUG290.fa
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+OPENMP
+LONGSEQUENCES
+
+Fri Oct 30 12:48:24 2020
+ velvetg RUG290/
+Version 1.2.10
+Copyright 2007, 2008 Daniel Zerbino (zerbino@ebi.ac.uk)
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Compilation settings:
+CATEGORIES = 2
+MAXKMERLENGTH = 31
+OPENMP
+LONGSEQUENCES
+
+Final graph has 674 nodes and n50 of 14437, max 75683, total 1532559, using 138/160 reads
