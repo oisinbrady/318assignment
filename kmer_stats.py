@@ -6,7 +6,16 @@ import numpy as np
 import sys
 
 
-def fasta_to_dict(genome_file=None):
+def fasta_to_dict(genome_file=None) -> dict:
+    """
+    Convert a single fasta input file (via command line argument)
+    into the a dictionary data type that program can process.
+    The single genome file provided must exist in the directory:
+    '/home/oisin/programs/cs318/318assignment/genomes/'
+    By default, if no genome file is provided the 4 sample genomes
+    are processed.
+    Returns Python dictionary equivalents of the fasta genome files.
+    """
     if genome_file == None:
         # convert all 4 genome sequences into Biopython sequence data types
         file_dir = "/home/oisin/programs/cs318/318assignment/genomes/"
@@ -28,7 +37,15 @@ def fasta_to_dict(genome_file=None):
         return genome
 
 
-def count_n_bases(all_genomes: dict, k: int):
+def count_kmers(all_genomes: dict, k: int) -> dict:
+    """
+    Count the number of k-mer occurances based of the size of k
+    E.g: k = 2, counts all possible 2-mers in genome.
+    N.B: k-mers include 'N' which denotes bases that could not be
+    identified during the assembly process.
+    Returns a dictionary of the occurances of each k-mer in each
+    genome sequence.
+    """
     k_mers = list(permutations(['A', 'G', 'C', 'T', 'N'], k))
     all_kmer_vectors = dict()
     for genome in all_genomes:
@@ -53,7 +70,12 @@ def count_n_bases(all_genomes: dict, k: int):
     return all_kmer_vectors
 
 
-def normalised_k_mer_freq_vector(k_mer_count: dict, k: int):
+def normalised_k_mer_freq_vector(k_mer_count: dict, k: int) -> dict:
+    """
+    For each genome, produced a normalised vector of frequencies of
+    recorded k-mers.
+    Returns a dictionary that represents the normalised frequency vector.
+    """
     norm_k_mer_freq_vector = dict()
     total_bases = sum(k_mer_count.values())
     for kmer in k_mer_count:
@@ -62,10 +84,10 @@ def normalised_k_mer_freq_vector(k_mer_count: dict, k: int):
     return norm_k_mer_freq_vector
 
 
-def euclidean_distance(kmer_vectors: dict, k: int):
+def euclidean_distance(kmer_vectors: dict, k: int) -> None:
     """
-    calculate euclidean distance between all genomes
-    N.B: Ns (unidentified bases) are exluded in this calculation
+    Calculate euclidean distance between all genomes.
+    Euclidean distance is printed to standard output.
     """
     print("Euclidean Distances:\n")
     complete_v = list()  # vectors already compared
@@ -73,7 +95,7 @@ def euclidean_distance(kmer_vectors: dict, k: int):
         for next_v in kmer_vectors:
             if next_v != cur_v:  # compare with all other genome vectors
                 if next_v not in complete_v:
-                    # get normalised value of each kmer of the next genome
+                    # get normalised value of each k-mer of the next genome
                     kmer_delta_vals = list()
                     for item in kmer_vectors[next_v]:
                         """
@@ -92,7 +114,11 @@ def euclidean_distance(kmer_vectors: dict, k: int):
         complete_v.append(cur_v)
 
 
-def histogram(kmer_vectors: dict) -> None:
+def barchart(kmer_vectors: dict) -> None:
+    """
+    Create a bar chart for occurances of each k-mer in the
+    genomes provided in kmer_vectors argument
+    """
     for genome_name in kmer_vectors:
         cur_v = kmer_vectors[genome_name]
         dataset = list()
@@ -124,10 +150,10 @@ def main():
     else:
         k = 1  # default k-mer size
 
-    all_genome_kmer_vectors = count_n_bases(all_genomes, k)
+    all_genome_kmer_vectors = count_kmers(all_genomes, k)
     if len(all_genome_kmer_vectors) > 1:
         euclidean_distance(all_genome_kmer_vectors, k)
-    histogram(all_genome_kmer_vectors)
+    barchart(all_genome_kmer_vectors)
 
 
 if __name__ == '__main__':
