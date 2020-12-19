@@ -20,6 +20,8 @@ def fasta_to_dict(genome_file=None):
         return all_genomes
     else:
         genome = dict()
+        file_dir = "/home/oisin/programs/cs318/318assignment/genomes/"
+        file = genome_file
         with open(f"{file_dir}{file}", "r") as ff:
             sequences = list(SeqIO.parse(ff, "fasta"))
             genome[f"{file[0:(file.find('.'))]}"] = sequences
@@ -123,7 +125,8 @@ def main():
         k = 1  # default k-mer size
 
     all_genome_kmer_vectors = count_n_bases(all_genomes, k)
-    euclidean_distance(all_genome_kmer_vectors, k)
+    if len(all_genome_kmer_vectors) > 1:
+        euclidean_distance(all_genome_kmer_vectors, k)
     histogram(all_genome_kmer_vectors)
 
 
